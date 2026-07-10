@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>GN128 - IT Solutions</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        
+                <style>
+            .container{
+                max-width: 100%;
+            }
+            @media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 100%;
+    }
+}
+        </style>
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+       <!-- Navbar Start -->
+        <div class="c">
+            <div class="container">
+                <div id="navbar-placeholder"></div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        
+        
+
+
+        <!-- About Start -->
+        <div class="container-fluid ">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            <img src="img/about-1.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                                <img src="img/about-2.jpg" class="img-fluid w-100 rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <!--<h5 class="text-primary">About Us</h5>-->
+                        <h1 class="mb-4">About GN128</h1>
+                        <p>GN128 Solutions is a forward-thinking organization dedicated to helping businesses operate smarter, faster, and more securely through technology. We partner with organizations of all sizes to design, implement, and manage reliable IT Solutions that align with their goals and scale with their growth.</p>
+                        <p class="mb-4">Our expertise spans IT Solutions Architecture, Software & Application development, Cloud Solutions, Infrastructure management and technical support. At GN128 Solutions, we focus on delivering practical, results driven technology not one-size-fits-all systems, ensuring our clients gain real value from every solution we deploy.</p>
+                        <p class="mb-4">What sets us apart is our commitment to reliability, transparency, and long-term partnerships. We take the time to understand each client’s unique challenges and provide proactive support that minimizes downtime, enhances security, and empowers teams to focus on what matters most.</p>
+                        <p class="mb-4">At GN128 Solutions, technology is more than a service. It’s a strategic advantage. We’re here to simplify IT, strengthen your operations, and help your business move forward with confidence.</p>
+                        
+                        <!--<a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Footer Start -->
+         <div id="footer-placeholder"></div>
+        <!-- Footer End -->
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        
+                <script>
+          function loadHTML(id, url) {
+            fetch(url)
+              .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+              })
+              .then(data => {
+                document.getElementById(id).innerHTML = data;
+              })
+              .catch(error => console.error('Error loading ' + url + ':', error));
+          }
+        
+          // Load navbar and footer into placeholders
+          loadHTML('navbar-placeholder', 'navbar.html');
+          loadHTML('footer-placeholder', 'footer.html');
+        </script>
+         <script>
+    let chartInstance = null;
+    const baseUrl = "https://rank128.com/api";
+
+    function simplifyDevice(device) {
+        if (!device) return '-';
+        device = device.toLowerCase();
+        if (device.includes('windows')) return 'Windows';
+        if (device.includes('android')) return 'Android';
+        if (device.includes('mac')) return 'Mac';
+        if (device.includes('iphone') || device.includes('ios')) return 'iOS';
+        if (device.includes('linux')) return 'Linux';
+        return 'Other';
+    }
+
+    function formatTimeSpent(seconds) {
+        if (!seconds) return '0s';
+        
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        
+        if (hours > 0) {
+            return `${hours}h ${minutes}m ${secs}s`;
+        } else if (minutes > 0) {
+            return `${minutes}m ${secs}s`;
+        } else {
+            return `${secs}s`;
+        }
+    }
+
+    function truncateUrl(url, maxLength = 30) {
+        if (url.length <= maxLength) return url;
+        return url.substring(0, maxLength) + '...';
+    }
+
+    function showLoader() {
+        document.getElementById('loader').style.display = 'flex';
+    }
+
+    function hideLoader() {
+        document.getElementById('loader').style.display = 'none';
+    }
+
+    async function fetchReport() {
+        showLoader();
+
+        const projectId = document.getElementById('projectSelect').value;
+        const section = document.getElementById('reportSection');
+        const body = document.getElementById('reportBody');
+        const title = document.getElementById('reportTitle');
+        const trackingBox = document.getElementById('trackingSection');
+        const trackingScriptBox = document.getElementById('trackingScript');
+        const chartCanvas = document.getElementById('trafficChart');
+
+        if (!projectId) {
+            hideLoader();
+            section.style.display = 'none';
+            trackingBox.style.display = 'none';
+            chartCanvas.style.display = 'none';
+            return;
+        }
+
+        let res;
+        try {
+            res = await fetch(`/project-visits/${projectId}`);
+        } catch (e) {
+            hideLoader();
+            alert('Network error');
+            return;
+        }
+
+        if (!res.ok) {
+            const error = await res.json();
+            alert(error.message || 'Unable to load report');
+            section.style.display = 'none';
+            chartCanvas.style.display = 'none';
+            trackingBox.style.display = 'none';
+            return;
+        }
+
+        const visits = await res.json();
+
+        // Build table
+        body.innerHTML = '';
+        title.innerText = `Visitor Report for Project ID: ${projectId}`;
+
+        if (visits.length === 0) {
+            body.innerHTML = `
+                <tr>
+                    <td colspan="8" style="text-align:center;">
+                        No visits recorded yet.
+                    </td>
+                </tr>`;
+        } else {
+            visits.forEach((v, i) => {
+                const pagesList = Array.isArray(v.pages_visited) && v.pages_visited.length > 0 
+                    ? v.pages_visited.map(url => truncateUrl(url, 30)).join('<br>')
+                    : '-';
+                
+                const timeSpent = v.time_spent_formatted || formatTimeSpent(v.time_spent_seconds);
+                
+                body.innerHTML += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${v.ip_address || '-'}</td>
+                        <td>${v.location || '-'}</td>
+                        <td>${simplifyDevice(v.device)}</td>
+                        <td class="pages-list">${pagesList}</td>
+                        <td class="time-spent">${timeSpent}</td>
+                        <td>${new Date(v.created_at).toLocaleString()}</td>
+                        <td>${v.last_activity_at ? new Date(v.last_activity_at).toLocaleString() : '-'}</td>
+                    </tr>`;
+            });
+        }
+
+        section.style.display = 'block';
+        chartCanvas.style.display = 'block';
+
+        // Chart data
+        const dateCounts = {};
+        visits.forEach(v => {
+            const d = new Date(v.created_at);
+            const key = d.toISOString().split('T')[0];
+            dateCounts[key] = (dateCounts[key] || 0) + 1;
+        });
+
+        const labels = Object.keys(dateCounts).sort((a, b) => new Date(a) - new Date(b));
+        const data = labels.map(l => dateCounts[l]);
+
+        if (chartInstance) chartInstance.destroy();
+
+        chartInstance = new Chart(chartCanvas, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Daily Visits',
+                    data,
+                    fill: true,
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40,167,69,0.1)',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { title: { display: true, text: 'Date' } },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Enhanced tracking script for the user to copy
+        trackingScriptBox.innerText = `<script>
+(function() {
+    let sessionId = localStorage.getItem('tracking_session_id');
+    if (!sessionId) {
+        sessionId = 'session_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('tracking_session_id', sessionId);
+    }
+    
+    let lastPage = window.location.href;
+    let startTime = Date.now();
+    let pagesVisited = [lastPage];
+    
+    // Track initial visit
+    fetch('${baseUrl}/track-visit/${projectId}?session_id=' + sessionId)
+        .then(res => console.log('Initial visit logged'))
+        .catch(err => console.error('Error logging visit', err));
+    
+    // Function to send page view data
+    function trackPageView() {
+        const currentPage = window.location.href;
+        const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+        
+        if (!pagesVisited.includes(currentPage)) {
+            pagesVisited.push(currentPage);
+        }
+        
+        fetch('${baseUrl}/track-page-visit/${projectId}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                session_id: sessionId,
+                current_page: currentPage,
+                time_spent: timeSpent
+            })
+        }).then(() => {
+            startTime = Date.now(); // Reset timer
+        }).catch(err => console.error('Error tracking page:', err));
+    }
+    
+    // Track on page load
+    trackPageView();
+    
+    // Track on page unload
+    window.addEventListener('beforeunload', function() {
+        const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+        
+        // Use navigator.sendBeacon for reliability on page unload
+        const data = new Blob([JSON.stringify({
+            session_id: sessionId,
+            current_page: window.location.href,
+            time_spent: timeSpent
+        })], {type: 'application/json'});
+        
+        navigator.sendBeacon('${baseUrl}/track-page-visit/${projectId}', data);
+    });
+    
+    // Track time periodically (every 30 seconds)
+    setInterval(trackPageView, 30000);
+    
+    // Track when page becomes visible again
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            startTime = Date.now();
+        }
+    });
+})();
+<\/script>`;
+
+        trackingBox.style.display = 'block';
+        document.getElementById('uploadProjectId').value = projectId;
+        hideLoader();
+    }
+
+    function copyScript() {
+        const text = document.getElementById('trackingScript').innerText;
+        navigator.clipboard.writeText(text);
+        alert('Tracking script copied!');
+    }
+
+    async function generatePDF() {
+        const projectId = document.getElementById('projectSelect').value;
+        if (!projectId) return alert('Select a project first.');
+
+        const res = await fetch(`/advance-report/${projectId}/generate-pdf`, {
+            headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' }
+        });
+
+        if (!res.ok) return alert('Error generating PDF.');
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `project_${projectId}_report.pdf`;
+        a.click();
+    }
+
+    async function emailReport() {
+        const projectId = document.getElementById('projectSelect').value;
+        if (!projectId) return alert('Select a project first.');
+
+        const res = await fetch(`/advance-report/${projectId}/email-report`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+
+        const data = await res.json();
+        alert(data.message || 'Email sent successfully!');
+    }
+
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const fileInput = document.getElementById('htmlFile');
+        const projectId = document.getElementById('projectSelect').value;
+
+        if (!projectId) {
+            alert('Please select a project first.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('htmlFile', fileInput.files[0]);
+        formData.append('project_id', projectId);
+
+        const response = await fetch('/upload-html', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+
+        const blob = await response.blob();
+        const downloadUrl = URL.createObjectURL(blob);
+        const link = document.getElementById('fileDownloadUrl');
+        link.href = downloadUrl;
+
+        document.getElementById('downloadLink').style.display = 'block';
+    });
+    </script>
+    </body>
+
+</html>
