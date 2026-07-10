@@ -38,14 +38,13 @@
     <header class="site-header" id="site-header">
         <div class="container header__inner">
             <a href="index.html" class="brand" aria-label="GN128 Solutions home">
-                <span class="brand__mark" aria-hidden="true">✳</span>
-                <span class="brand__name">GN<span class="brand__accent">128</span> Solutions</span>
+                <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
             </a>
 
             <nav class="nav" id="primary-nav" aria-label="Primary">
                 <ul class="nav__list">
                     <li><a href="#home" class="nav__link">Home</a></li>
-                    <li><a href="#services" class="nav__link">Services</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
                     <li><a href="#projects" class="nav__link">Projects</a></li>
                     <li><a href="#contact" class="nav__link">Contact Us</a></li>
                 </ul>
@@ -96,17 +95,17 @@
                     </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Hero visual band -->
-            <div class="container">
-                <figure class="showcase reveal" data-reveal>
-                    <video class="showcase__media" autoplay muted loop playsinline
-                        poster="assets/img/showcase-poster.jpg"
-                        aria-label="3D visualization of interconnected data blocks">
-                        <source src="assets/video/hero-1.mp4" type="video/mp4">
-                    </video>
-                </figure>
-            </div>
+        <!-- ============================= SHOWCASE VIDEO ============================= -->
+        <section class="showcase-section">
+            <figure class="showcase reveal" data-reveal>
+                <video class="showcase__media" autoplay muted loop playsinline
+                    poster="assets/img/showcase-poster.jpg"
+                    aria-label="3D visualization of interconnected data blocks">
+                    <source src="assets/video/hero-1.mp4" type="video/mp4">
+                </video>
+            </figure>
         </section>
 
         <!-- ============================= FEATURES ============================= -->
@@ -205,24 +204,67 @@
                     </svg>
 
                     <div class="node node--hub">
-                        <span aria-hidden="true">✳</span>
-                        <span class="sr-only">GN128 automation core</span>
+                        <svg class="hub__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="2.4" />
+                            <circle cx="12" cy="4.5" r="1.8" />
+                            <circle cx="5" cy="18" r="1.8" />
+                            <circle cx="19" cy="18" r="1.8" />
+                            <path d="M12 9.6V6.3M10.4 13.4 6.3 16.5M13.6 13.4l4.1 3.1" />
+                        </svg>
+                        <span class="hub__label">GN128 Core Process</span>
                     </div>
 
-                    <span class="node node--pill" style="top:9%;left:50%">Discovery</span>
-                    <span class="node node--pill" style="top:26%;left:22%">Email Routing</span>
-                    <span class="node node--pill" style="top:26%;left:78%">Strategy</span>
-                    <span class="node node--pill" style="top:50%;left:12%">HR Automation</span>
-                    <span class="node node--pill" style="top:50%;left:88%">Implementation</span>
-                    <span class="node node--pill" style="top:74%;left:22%">Support</span>
-                    <span class="node node--pill" style="top:74%;left:78%">Automation</span>
-                    <span class="node node--pill" style="top:91%;left:50%">Optimization</span>
+                    <span class="node node--pill" style="top:9%;left:50%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" />
+                        </svg>Discovery
+                    </span>
+                    <span class="node node--pill" style="top:26%;left:22%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7.5 12 13l8.5-5.5" />
+                        </svg>Email Routing
+                    </span>
+                    <span class="node node--pill" style="top:26%;left:78%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="5" r="1.8" /><path d="M12 6.8 7.5 19M12 6.8 16.5 19M10 15h4" />
+                        </svg>Strategy
+                    </span>
+                    <span class="node node--pill" style="top:50%;left:12%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="9" cy="8" r="3" /><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5" /><path d="M16 5.5a3 3 0 0 1 0 5.8M21 20c0-2.3-1.4-4-3.6-4.7" />
+                        </svg>HR Automation
+                    </span>
+                    <span class="node node--pill" style="top:50%;left:88%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.7 6.3a3.6 3.6 0 0 0-4.8 4.8L4 17l3 3 5.9-5.9a3.6 3.6 0 0 0 4.8-4.8l-2.3 2.3-2-2 2.3-2.3z" />
+                        </svg>Implementation
+                    </span>
+                    <span class="node node--pill" style="top:74%;left:22%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M5 5l4.6 4.6M14.4 14.4 19 19M19 5l-4.6 4.6M9.6 14.4 5 19" />
+                        </svg>Support
+                    </span>
+                    <span class="node node--pill" style="top:74%;left:78%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="5" y="8" width="14" height="10" rx="2.5" /><path d="M12 8V4.5M9 13h.01M15 13h.01M3 12v3M21 12v3" />
+                        </svg>Automation
+                    </span>
+                    <span class="node node--pill" style="top:91%;left:50%">
+                        <svg class="node__icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 16l5-5 3 3 7-7M15 7h5v5" />
+                        </svg>Optimization
+                    </span>
                 </div>
             </div>
         </section>
 
         <!-- ============================= SERVICES ============================= -->
         <section class="section services" id="services">
+            <video class="services__bg" autoplay muted loop playsinline
+                poster="assets/img/services-poster.jpg" aria-hidden="true">
+                <source src="assets/video/hero-2.mp4" type="video/mp4">
+            </video>
+            <div class="services__overlay" aria-hidden="true"></div>
             <div class="container">
                 <header class="section__head section__head--left reveal" data-reveal>
                     <h2 class="section__title">
@@ -299,8 +341,7 @@
         <div class="container footer__grid">
             <div class="footer__brand">
                 <a href="index.html" class="brand">
-                    <span class="brand__mark" aria-hidden="true">✳</span>
-                    <span class="brand__name">GN<span class="brand__accent">128</span> Solutions</span>
+                    <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
                 </a>
                 <p class="footer__tagline">
                     Empowering the enterprise with intelligent automation solutions that scale.

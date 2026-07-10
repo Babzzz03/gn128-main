@@ -32,6 +32,7 @@
     --font-display: "Space Grotesk", var(--font-body);
 
     /* Metrics */
+    --header-h: 74px;
     --container: 1200px;
     --radius: 16px;
     --radius-lg: 24px;
@@ -50,6 +51,7 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -58,8 +60,24 @@ body {
     background: var(--bg);
     line-height: 1.6;
     font-size: 16px;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Media never forces horizontal overflow */
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+/* Long headings wrap instead of overflowing on narrow screens */
+h1,
+h2,
+h3 {
+    overflow-wrap: break-word;
 }
 
 img {
@@ -242,17 +260,22 @@ h4 {
         linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.12)) border-box;
 }
 
+/* Dark rounded-rectangle with a gradient border */
 .btn--dark {
-    background: #0b0b10;
-    border-color: rgba(255, 255, 255, 0.1);
     color: #fff;
+    border: 1px solid transparent;
     border-radius: 12px;
     font-weight: 600;
+    background:
+        linear-gradient(#0b0b10, #0b0b10) padding-box,
+        var(--gradient) border-box;
 }
 
 .btn--dark:hover {
-    background: #16161f;
-    border-color: var(--border-strong);
+    background:
+        linear-gradient(#16161f, #16161f) padding-box,
+        var(--gradient) border-box;
+    box-shadow: 0 8px 26px -14px var(--glow);
 }
 
 /* Pill badge */
@@ -284,19 +307,22 @@ h4 {
     box-shadow: 0 0 10px 2px var(--glow);
 }
 
-/* Cards */
+/* Cards — dark fill with a subtle purple gradient border, brighter at the top */
 .card {
-    background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%);
-    border: 1px solid var(--border);
+    position: relative;
+    border: 1px solid transparent;
     border-radius: var(--radius);
     padding: 1.9rem;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    background:
+        linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%) padding-box,
+        linear-gradient(155deg, rgba(124, 92, 255, 0.55), rgba(255, 255, 255, 0.05) 42%, rgba(124, 92, 255, 0.14)) border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-strong);
-    box-shadow: 0 20px 50px -25px rgba(124, 92, 255, 0.5);
+    transform: scale(1.035);
+    box-shadow: 0 24px 60px -24px rgba(124, 92, 255, 0.55);
+    z-index: 2;
 }
 
 /* ---------- 5. Sections ---------- */
@@ -330,6 +356,15 @@ h4 {
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.1rem;
+}
+
+.brand__logo {
+    height: 34px;
+    width: auto;
+}
+
+.footer__brand .brand__logo {
+    height: 42px;
 }
 
 .brand__mark {
@@ -409,7 +444,10 @@ h4 {
 /* Hero */
 .hero {
     position: relative;
-    padding-top: clamp(3rem, 7vw, 5.5rem);
+    /* Pull the hero (and its background) up behind the transparent header so
+       the pattern flows continuously — no seam under the nav. */
+    margin-top: calc(-1 * var(--header-h));
+    padding-top: calc(var(--header-h) + clamp(2.5rem, 6vw, 4.5rem));
     text-align: center;
     overflow: hidden;
 }
@@ -417,20 +455,24 @@ h4 {
 .hero__bg {
     position: absolute;
     inset: 0;
-  
-    rotate: 90deg;
     z-index: -1;
-    background: url("../img/hero-bg.png") center top / contain no-repeat, var(--bg);
+    background: url("../img/hero-bg-wide.jpg") center center / cover no-repeat, var(--bg);
 }
 
 .hero__bg::after {
-    /* Darken center for text legibility + fade the pattern into the page background */
+    /* Darken top (nav legibility) + center (headline) and fade the pattern into
+       the base colour at top and bottom so there are no hard demarcations. */
     content: "";
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(50% 55% at 50% 40%, rgba(5, 5, 9, 0.55), transparent 75%),
-        linear-gradient(180deg, rgba(5, 5, 9, 0.45) 0%, transparent 20%, transparent 60%, var(--bg) 100%);
+        radial-gradient(58% 55% at 50% 45%, rgba(5, 5, 9, 0.6), transparent 72%),
+        linear-gradient(180deg,
+            var(--bg) 0%,
+            rgba(5, 5, 9, 0.55) 14%,
+            transparent 42%,
+            transparent 74%,
+            var(--bg) 100%);
 }
 
 .hero__inner {
@@ -461,6 +503,11 @@ h4 {
 }
 
 /* Showcase band */
+/* Standalone video band beneath the hero */
+.showcase-section {
+    padding-block: 0 clamp(3rem, 6vw, 5rem);
+}
+
 .showcase {
     margin: 0;
 }
@@ -470,8 +517,6 @@ h4 {
     width: 100%;
     aspect-ratio: 24 / 9;
     object-fit: cover;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border);
     background: #05050b;
 }
 
@@ -519,6 +564,15 @@ h4 {
     max-width: 760px;
     margin-inline: auto;
     aspect-ratio: 1 / 0.82;
+    /* Slowly orbit the whole constellation around the centre hub */
+    animation: node-orbit 48s linear infinite;
+}
+
+/* Pause the whole constellation on hover so labels are easy to read */
+.nodes:hover,
+.nodes:hover .node--pill,
+.nodes:hover .node--hub {
+    animation-play-state: paused;
 }
 
 .nodes__lines {
@@ -543,16 +597,41 @@ h4 {
 .node--hub {
     top: 50%;
     left: 50%;
-    display: grid;
-    place-items: center;
-    width: 84px;
-    height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 104px;
+    height: 104px;
     border-radius: 50%;
     background: var(--gradient);
     color: #fff;
-    font-size: 1.6rem;
     box-shadow: 0 0 40px -4px var(--glow);
-    animation: pulse 3s ease-in-out infinite;
+    /* Pulse + counter-rotate so the hub icon/label stay upright while the ring spins */
+    animation: pulse 3s ease-in-out infinite, node-orbit-counter 48s linear infinite;
+}
+
+.hub__icon {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hub__label {
+    font-family: var(--font-display);
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 8ch;
+    line-height: 1.2;
+    opacity: 0.95;
 }
 
 .node--pill {
@@ -567,17 +646,61 @@ h4 {
     font-weight: 500;
     white-space: nowrap;
     box-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.8);
+    /* Counter-rotate at the same rate so labels stay upright while orbiting */
+    animation: node-orbit-counter 48s linear infinite;
 }
 
-.node--pill::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--primary-400);
+.node__icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--primary-400);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* Services */
+.services {
+    position: relative;
+    overflow: hidden;
+}
+
+.services__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.services__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    /* Darken heavily on the left (behind the heading) and fade the section edges
+       into the page background so the video reads as an ambient glow. */
+    background:
+        linear-gradient(90deg, var(--bg) 8%, rgba(5, 5, 9, 0.72) 45%, rgba(5, 5, 9, 0.55) 100%),
+        linear-gradient(180deg, var(--bg) 0%, transparent 22%, transparent 78%, var(--bg) 100%);
+}
+
+.services > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Glass cards so the glow shows through subtly (keeps the gradient border) */
+.services .card {
+    background:
+        linear-gradient(180deg, rgba(16, 16, 26, 0.62), rgba(10, 10, 18, 0.62)) padding-box,
+        linear-gradient(155deg, rgba(124, 92, 255, 0.55), rgba(255, 255, 255, 0.05) 42%, rgba(124, 92, 255, 0.14)) border-box;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
 .services__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -607,6 +730,244 @@ h4 {
     font-size: 0.92rem;
 }
 
+/* ---------- Services page ---------- */
+.nav__link.is-active {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Framed hero panel */
+/* Full-bleed hero with a giant title over the silk video */
+.svc-hero {
+    position: relative;
+    margin-top: calc(-1 * var(--header-h));
+    min-height: clamp(600px, 82vh, 860px);
+    overflow: hidden;
+}
+
+.svc-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.svc-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(5, 5, 9, 0.72) 0%, rgba(5, 5, 9, 0.12) 26%, rgba(5, 5, 9, 0.22) 62%, rgba(5, 5, 9, 0.88) 100%),
+        linear-gradient(90deg, rgba(5, 5, 9, 0.6) 0%, transparent 55%);
+}
+
+.svc-hero__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    min-height: clamp(600px, 82vh, 860px);
+    padding-top: calc(var(--header-h) + 1.6rem);
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.breadcrumb svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.breadcrumb a:hover {
+    color: var(--text);
+}
+
+.breadcrumb [aria-current] {
+    color: var(--text);
+}
+
+.svc-hero__title {
+    font-size: clamp(2.2rem, 5.4vw, 4.2rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    max-width: 15ch;
+    margin-top: 0.5rem;
+}
+
+.svc-hero__foot {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem 3rem;
+    align-items: end;
+}
+
+.svc-hero__intro {
+    max-width: 52ch;
+}
+
+/* Plain, borderless monospace badge (matches the reference) */
+.svc-hero__badge {
+    padding: 0;
+    border: none;
+    background: none;
+    backdrop-filter: none;
+    align-items: flex-start;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    letter-spacing: 0.08em;
+}
+
+.pill__glyph {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--primary-400);
+    stroke-width: 1.6;
+    margin-top: 0.15em;
+}
+
+.svc-hero__subtitle {
+    color: var(--text-muted);
+    max-width: 52ch;
+    font-size: 1rem;
+}
+
+.svc-hero__links {
+    min-width: 230px;
+}
+
+.quicklinks__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.quicklinks {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.quicklinks a {
+    display: block;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-display);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.quicklinks a:hover {
+    color: var(--primary-400);
+    padding-left: 0.4rem;
+}
+
+/* Highlight the quicklink for the page you're currently on */
+.quicklinks a.is-active {
+    color: var(--primary-400);
+    border-bottom-color: var(--primary-400);
+}
+
+.scroll-down {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.scroll-down svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: scroll-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(3px); }
+}
+
+/* Popular solutions grid (Services page — 2 up) */
+.solutions__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Audience grid (Solutions page — 3 up) */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.solution {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.solution__title {
+    font-size: 1.2rem;
+}
+
+.solution__text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.solution__list {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.4rem;
+}
+
+.solution__list li {
+    position: relative;
+    padding-left: 1.3rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.solution__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-400);
+}
+
 /* CTA */
 .cta {
     position: relative;
@@ -614,20 +975,13 @@ h4 {
     padding: clamp(3rem, 7vw, 5rem) 1.5rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
-    background: linear-gradient(180deg, var(--surface), var(--bg-2));
+    background: url("../img/cta-bg.png") center / cover no-repeat, var(--bg-2);
     overflow: hidden;
 }
 
+/* Glow is baked into the CTA background image now */
 .cta__glow {
-    position: absolute;
-    top: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    height: 100%;
-    background: radial-gradient(circle, var(--glow), transparent 65%);
-    filter: blur(30px);
-    z-index: 0;
+    display: none;
 }
 
 .cta > *:not(.cta__glow) {
@@ -757,6 +1111,24 @@ h4 {
     .footer__brand {
         grid-column: 1 / -1;
     }
+
+    .svc-hero__foot {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .svc-hero__links {
+        border-top: 1px solid var(--border);
+        padding-top: 1.5rem;
+    }
+
+    .solutions__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -802,7 +1174,8 @@ h4 {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.6rem;
-        max-width: 420px;
+        max-width: min(420px, 100%);
+        animation: none;
     }
 
     .nodes__lines {
@@ -812,6 +1185,11 @@ h4 {
     .node {
         position: static;
         transform: none;
+    }
+
+    .node--pill,
+    .node--hub {
+        animation: none;
     }
 
     .node--hub {
@@ -824,7 +1202,8 @@ h4 {
 @media (max-width: 560px) {
     .features__grid,
     .services__grid,
-    .footer__grid {
+    .footer__grid,
+    .audience-grid {
         grid-template-columns: 1fr;
     }
 
@@ -836,6 +1215,29 @@ h4 {
     .cta__actions {
         width: 100%;
     }
+
+    /* Let the hero headline wrap naturally instead of forcing desktop breaks */
+    .hero__title br {
+        display: none;
+    }
+
+    .hero__title {
+        font-size: clamp(1.85rem, 8.5vw, 2.6rem);
+        max-width: 100%;
+    }
+
+    .svc-hero__title {
+        font-size: clamp(1.9rem, 9vw, 2.8rem);
+    }
+
+    .section__title {
+        font-size: clamp(1.5rem, 6.5vw, 2rem);
+    }
+
+    .svc-hero__subtitle,
+    .hero__subtitle {
+        font-size: 0.95rem;
+    }
 }
 
 /* ---------- 7. Motion ---------- */
@@ -846,6 +1248,17 @@ h4 {
     50% {
         box-shadow: 0 0 60px 4px var(--glow);
     }
+}
+
+/* Constellation orbit — container spins, pills counter-spin to stay upright */
+@keyframes node-orbit {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes node-orbit-counter {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
 .reveal {
