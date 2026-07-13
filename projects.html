@@ -1,847 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Projects - GN128 IT Solutions</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-       
-        <style>
-            .container{
-                max-width: 100%;
-            }
-            .py-5 {
-                padding-top: 1rem !important;
-                padding-bottom: 3rem !important;
-            }
-            @media (min-width: 1200px) {
-                .container-xl, .container-lg, .container-md, .container-sm, .container {
-                    max-width: 100%;
-                }
-            }
-            .project-card {
-                background: #ffffff;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-            .project-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            }
-            .project-img {
-                height: 250px;
-                object-fit: contain;
-            }
-            .project-body {
-                padding: 1.5rem;
-            }
-            
-            /* Project Cards with Distinct Sections */
-.project-card {
-    background: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Image Section - Fixed Height */
-.card-image-section {
-    height: 180px;
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    <title>Projects — GN128 Solutions</title>
+    <meta name="description"
+        content="AI systems we can build for your business. Explore how GN128 Solutions has helped businesses achieve their goals with innovative automation.">
 
-.project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 1rem;
-}
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-/* Body Section - Takes available space */
-.card-body-section {
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
-/* Title Section - Fixed Height */
-.title-section {
-    margin-bottom: 0.5rem;
-}
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-.title-section h5 {
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-/* Description Section - Fixed Height with Scroll for overflow */
-.description-section {
-    margin-bottom: 0.75rem;
-    overflow-y: auto;
-}
+    <!-- ============================= HEADER ============================= -->
+    <header class="site-header" id="site-header">
+        <div class="container header__inner">
+            <a href="index.html" class="brand" aria-label="GN128 Solutions home">
+                <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
+            </a>
 
-.description-section p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-    color: #6c757d;
-}
+            <nav class="nav" id="primary-nav" aria-label="Primary">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="projects.html" class="nav__link is-active" aria-current="page">Projects</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+                </ul>
+            </nav>
 
-/* Features Section - Fixed Height */
-.features-section {
-    height: 20vh;
-    margin-bottom: 0.5rem;
-    overflow-y: auto;
-}
-
-.features-section ul {
-    margin: 0;
-    padding: 0;
-    font-size: 0.85rem;
-}
-
-.features-section li {
-    margin-bottom: 0.35rem;
-    display: flex;
-    align-items: flex-start;
-}
-
-.features-section li i {
-    margin-top: 0.2rem;
-    flex-shrink: 0;
-    color: #28a745;
-}
-
-/* Button Section - Fixed at bottom */
-.card-footer-section {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    margin-top: auto;
-}
-
-.btn-outline-success {
-    transition: all 0.3s ease;
-}
-
-.btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
-}
-
-/* Scrollbar Styling */
-.description-section::-webkit-scrollbar,
-.features-section::-webkit-scrollbar {
-    width: 4px;
-}
-
-.description-section::-webkit-scrollbar-track,
-.features-section::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.description-section::-webkit-scrollbar-thumb,
-.features-section::-webkit-scrollbar-thumb {
-    background: #28a745;
-    border-radius: 4px;
-}
-
-.description-section::-webkit-scrollbar-thumb:hover,
-.features-section::-webkit-scrollbar-thumb:hover {
-    background: #218838;
-}
-
-    .title-section {
-        height: 20px;
-    }
-    
-    .description-section {
-        height: 25vh;
-    }
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .card-image-section {
-        height: 160px;
-    }
-    
-    .title-section {
-        height: 45px;
-    }
-    
-    .description-section {
-        height: 70px;
-    }
-    
-    .features-section {
-        height: 90px;
-    }
-}
-
-@media (max-width: 768px) {
-    .card-image-section {
-        height: 150px;
-    }
-    
-    .card-body-section {
-        padding: 1rem 1rem 0.25rem 1rem;
-    }
-    
-    .title-section {
-        height: 40px;
-    }
-    
-    .description-section {
-        height: 65px;
-        font-size: 0.85rem;
-    }
-    
-    .features-section {
-        height: 85px;
-    }
-    
-    .card-footer-section {
-        padding: 0 1rem 1rem 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .card-image-section {
-        height: 140px;
-    }
-}
-        </style>
-    </head>
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
+            <div class="header__actions">
+                <a href="book.html" class="btn btn--pill btn--dark">Book a Call</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
+                    aria-controls="primary-nav">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <!-- Spinner End -->
+    </header>
 
-        <!-- Navbar Start -->
-        <div class="c">
+    <main id="main">
+        <!-- ============================= PROJECTS HERO ============================= -->
+        <section class="svc-hero" id="top">
+            <video class="svc-hero__bg" autoplay muted loop playsinline
+                poster="assets/img/projects-hero-poster.jpg" aria-hidden="true">
+                <source src="assets/video/projects-hero.mp4" type="video/mp4">
+            </video>
+            <div class="svc-hero__overlay" aria-hidden="true"></div>
+
+            <div class="svc-hero__inner container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html" aria-label="Home">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7M6 10v9h12v-9" /></svg>
+                    </a>
+                    <span aria-hidden="true">›</span>
+                    <span aria-current="page">Projects</span>
+                </nav>
+
+                <h1 class="svc-hero__title reveal" data-reveal>AI systems we can build for your business.</h1>
+
+                <div class="svc-hero__foot">
+                    <div class="svc-hero__intro reveal" data-reveal>
+                        <p class="pill svc-hero__badge">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            Each system is designed to solve practical business problems and improve day-to-day operations.
+                        </p>
+
+                        <p class="svc-hero__subtitle">
+                            Streamline client onboarding, task management, and service delivery with AI-powered
+                            automation. Improve efficiency, reduce admin, and scale your operations while delivering
+                            a better client experience. Ideal for consultants, legal, and agencies.
+                        </p>
+                    </div>
+
+                    <aside class="svc-hero__links reveal" data-reveal>
+                        <h2 class="quicklinks__title">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            Quicklinks
+                        </h2>
+                        <ul class="quicklinks">
+                            <li><a href="#work">Case Study</a></li>
+                            <li><a href="testimonials.html">What Our Clients Say</a></li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <a class="scroll-down" href="#work">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+                    Scroll Down
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================= EXPLORE WORK ============================= -->
+        <section class="section" id="work">
             <div class="container">
-                <div id="navbar-placeholder"></div>
-            </div>
-        </div>
-        <!-- Navbar End -->
+                <header class="section__head section__head--left reveal" data-reveal>
+                    <h2 class="section__title">
+                        <span class="gradient-text">Explore Our Work.</span>
+                        See how we've helped businesses like yours achieve their goals with our
+                        innovative solutions.
+                    </h2>
+                </header>
 
-        <!-- Page Header Start -->
-        <!--<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(img/header-bg.jpg) center center no-repeat; background-size: cover;">-->
-        <!--    <div class="container text-center py-5">-->
-        <!--        <h1 class="display-3 text-white mb-4 animated slideInDown">Our Projects</h1>-->
-        <!--        <p class="text-white fs-5">Explore some of the successful IT solutions we've delivered for our clients</p>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <!-- Page Header End -->
+                <!-- Filters -->
+                <div class="filters reveal" data-reveal role="tablist" aria-label="Filter projects">
+                    <button class="filter is-active" data-filter="all">All</button>
+                    <button class="filter" data-filter="ecommerce">E-Commerce</button>
+                    <button class="filter" data-filter="web">Web Development</button>
+                    <button class="filter" data-filter="database">Database Management Systems</button>
+                    <button class="filter" data-filter="infrastructure">Infrastructure (Onsite/Cloud)</button>
+                </div>
 
-        <!-- Projects Start -->
-        <!-- Projects Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="text-center mx-auto mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 800px;">
-            <h1 class="mb-4">Featured Projects</h1>
-            <p>We take pride in delivering tailored, high-impact IT solutions that drive real business results.</p>
+                <!-- Grid -->
+                <div class="projects-grid">
+                    <article class="project-card reveal" data-reveal data-category="database web">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#20223d,#0e1626);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">CRM128</span>
+                            <h3 class="project-card__title">CRM128 built for companies and businesses</h3>
+                            <p class="project-card__text">
+                                Built for companies drowning in spreadsheets — from seamless contact management to
+                                processes that keep your team organized.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=crm128">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-reveal data-category="web">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#123222,#0c1c17);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">Search Engine Optimization</span>
+                            <h3 class="project-card__title">Organic Growth Strategy for MarketBoost</h3>
+                            <p class="project-card__text">
+                                Increased organic traffic by 150% in the first six months through targeted SEO and
+                                content marketing campaigns.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=marketboost">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-reveal data-category="web">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#2a1a33,#160f26);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">Mobile Development</span>
+                            <h3 class="project-card__title">Mobile App Development for Dkonect</h3>
+                            <p class="project-card__text">
+                                Developed a user-friendly mobile app with a 4.8-star rating, increasing customer
+                                engagement and retention.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=dkonect-mobile">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-reveal data-category="infrastructure">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#0f2740,#0a1522);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">Cloud Migration</span>
+                            <h3 class="project-card__title">Enterprise Cloud Migration for Fincorp</h3>
+                            <p class="project-card__text">
+                                Reduced operational costs by 30% through a custom cloud infrastructure, enhancing
+                                scalability and security.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=fincorp-cloud">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-reveal data-category="ecommerce web">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#1c1b3a,#0e1122);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">Web Development</span>
+                            <h3 class="project-card__title">E-Commerce Platform for Retalify</h3>
+                            <p class="project-card__text">
+                                Launched a new e-commerce platform from the ground up, boosting online sales by an
+                                incredible 75% in the first quarter.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=retalify">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-reveal data-category="database">
+                        <div class="project-card__media" style="background-image:linear-gradient(135deg,#33202a,#1c1018);"></div>
+                        <div class="project-card__body">
+                            <span class="project-card__tag">Database Management</span>
+                            <h3 class="project-card__title">Data Platform Rebuild for Dkonect</h3>
+                            <p class="project-card__text">
+                                Rebuilt a scalable data platform with automated pipelines, improving reporting speed
+                                and reliability across teams.
+                            </p>
+                            <a class="project-card__link" href="project.html?project=dkonect-data">View Project
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination (visual) -->
+                <nav class="pagination" aria-label="Projects pagination">
+                    <a href="#work" aria-label="Previous">‹</a>
+                    <a href="#work" class="is-active" aria-current="page">1</a>
+                    <a href="#work">2</a>
+                    <a href="#work">3</a>
+                    <a href="#work">4</a>
+                    <a href="#work">5</a>
+                    <a href="#work">6</a>
+                    <span class="pagination__gap">…</span>
+                    <a href="#work">64</a>
+                    <a href="#work">65</a>
+                    <a href="#work" aria-label="Next">›</a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer" id="contact">
+        <div class="container footer__grid">
+            <div class="footer__brand">
+                <a href="index.html" class="brand">
+                    <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
+                </a>
+                <p class="footer__tagline">
+                    Empowering the enterprise with intelligent automation solutions that scale.
+                </p>
+                <p class="footer__note">A product of GN128 Solutions.</p>
+            </div>
+
+            <nav class="footer__col" aria-label="Quick links">
+                <h4 class="footer__heading">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Company">
+                <h4 class="footer__heading">Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="contact.html">Email Us</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Resources">
+                <h4 class="footer__heading">Resources</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="blog.html">Webinars</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Legal">
+                <h4 class="footer__heading">Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">GDPR</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <div class="row g-4">
-    <!-- Project Card 1 - CRM128 -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="project-card h-100">
-            <!-- Image Section - Fixed Height -->
-            <div class="card-image-section">
-                <img src="/img/CRM 128.png"
-                     class="img-fluid project-img w-100"
-                     alt="CRM128 Project">
-            </div>
-            
-            <!-- Body Section - Flexible but consistent structure -->
-            <div class="card-body-section">
-                <!-- Title Section - Fixed -->
-                <div class="title-section">
-                    <h5 class="mb-3">CRM128</h5>
-                </div>
-                
-                <!-- Description Section - Fixed height with ellipsis for overflow -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        CRM128 is an all in one customizable CRM and business management system designed to streamline operations improve efficiency enhance collaboration and support scalable growth across teams and departments
-                    </p>
-                </div>
-                
-                <!-- Checkbox/Features Section - Fixed height -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Custom CRM & ERP System</li>
-                        <li><i class="bi bi-check-circle me-2"></i>HR, Inventory & Cash Flow Modules</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Role-Based Access & Permissions</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section - Fixed at bottom -->
-            <div class="card-footer-section">
-                <a href="https://crm128.com" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
+        <div class="container footer__bar">
+            <p>&copy; <span id="year">2026</span> GN128 Solutions. All rights reserved.</p>
+            <ul class="socials" aria-label="Social media">
+                <li><a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18 4l-5.5 6.5L18 20h-4l-3.5-5-4.3 5H4l6-7L4.3 4H8.5l3.2 4.6L15.8 4z" fill="currentColor" stroke="none"/></svg></a></li>
+                <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h3v11H4zM5.5 4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM10 9h3v1.6c.5-.9 1.6-1.8 3.3-1.8 3 0 3.7 1.9 3.7 4.5V20h-3v-5.2c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.8 1.4V20h-3z" fill="currentColor" stroke="none"/></svg></a></li>
+                <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+            </ul>
         </div>
-    </div>
+    </footer>
 
-    <!-- Project Card 2 - Rank128 -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/Rankora 1.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="Rankora Project">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Rank128</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Rank128 is an SEO and ranking optimization platform built to improve website visibility track keyword performance analyze competition and drive consistent high quality organic traffic for businesses
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>SEO Ranking & Keyword Tracking Tools</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Competitor & Performance Analytics</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Search Visibility Optimization</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://rank128.com" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+    <script src="assets/js/menu.js" defer></script>
 
-    <!-- Project Card 3 - HCA128 Care Management -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/HCA_Logo-removebg-preview (1).png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="HCA128 Care Management Project">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">HCA128 Care Management</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        HCA128 is an all in one care management platform for domiciliary and supported living providers offering tools for care scheduling compliance reporting secure portals and efficient communication for staff families
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Domiciliary & Supported Living Management</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Care Scheduling & Reporting</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Dedicated Portals for Staff & Families</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://hca128.com/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 4 - Online Food Ordering -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="/img/zenkonect.png"
-                     class="img-fluid project-img w-100"
-                     alt="Event Planning Platform">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Zenkonect</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Zenkonect.com is an online dating platform for ambitious, career-driven individuals,
-                            focused on building meaningful relationships alongside professional growth.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                            <li><i class="bi bi-check-circle me-2"></i>Custom Dating Platform Development</li>
-                            <li><i class="bi bi-check-circle me-2"></i>User Authentication & Profile Matching</li>
-                            <li><i class="bi bi-check-circle me-2"></i>Video Content Integration</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://zenkonect.com/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/fdd.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="Food Delivery Project">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Online Food Ordering</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        The Online Food Ordering platform promotes an authentic Chinese food delivery service, highlighting fresh, chef-prepared traditional dishes and convenient doorstep delivery for customers.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Authentic Chef-Prepared Chinese Dishes</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Convenient Doorstep Delivery</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Easy Menu Browsing & One-Tap Ordering</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://fdd128.com/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 5 - Cake Ordering Platform -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/CK new logo 1 1.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="GN128 Cakes Project">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Cake Ordering Platform</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        The GN128 Cakes website is an online storefront for ordering custom-made cakes, highlighting handcrafted creations for special occasions with a focus on quality, creativity, and a simple stress free ordering experience.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Custom Cake Designs for Special Occasions</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Online Cake Ordering & Product Pages</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Clean, User-Friendly E-commerce Layout</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://cakes.gn128app.com/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 6 - Internal Help Desk -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/hd.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover; padding:0"
-                     alt="Internal Help Desk">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Internal Help Desk</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        This helpdesk is an internal ERP-based support system that allows employees to report technical or workplace issues, set priorities, track resolutions, and confirm when problems are fixed.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Internal Issue & Ticket Management</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Priority-Based Support Requests</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Status Tracking & Resolution Confirmation</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a class="btn btn-outline-secondary w-100 disabled" aria-disabled="true">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 7 - Property Management Plus -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="/img/PMP.png"
-                     class="img-fluid project-img w-100"
-                     alt="Property Management Plus">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Property Management Plus</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Property Management Plus is a property-focused platform designed as a one-stop solution for property sales, rentals, and management, offering tools that simplify real estate operations.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Property Sales & Rental Listings</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Centralized Property Management Tools</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Simple Information Management</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="http://pmp128.com" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 8 - Event Planning & Rentals -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/Untitled design (3).png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover; padding:0"
-                     alt="Event Planning Platform">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Event Planning & Rentals</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        The GN128 Event platform is a promotional website for an event planning and rentals service, showcasing offerings such as event coordination, equipment rentals, and galleries for photos and videos through a simple, business-focused layout.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Event Planning & Coordination Services</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Event Rentals & Equipment Management</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Photo & Video Gallery Showcase</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://event.gn128app.com/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 9 - Chalom Foundation -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="img/Chalom.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="Chalom Foundation">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Chalom Foundation</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Chalom Foundation empowers futures through education, bridging sponsors and talented students from underserved communities. Since 2015, it provides scholarships, mentorship, and progress tracking to build community leaders.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Full & Partial Scholarships</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Mentorship & Career Guidance</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Progress Tracking & Sponsor Updates</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://chalomfoundation.org/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 10 - Dare A Dream -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="https://dareadream.org/logo.png"
-                     class="img-fluid project-img w-100"
-                     alt="Dare A Dream">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Dare A Dream</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Dare A Dream is a youth empowerment initiative dedicated to supporting Black African children and youths aged 8–20 through year-round programs that nurture spiritual, mental, social, physical, and professional growth.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Youth Empowerment & Development</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Educational & Life-Skills Programs</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Holistic Growth & Mentorship</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a href="https://dareadream.org/" target="_blank" class="btn btn-outline-success w-100">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 11 - Church Management -->
-    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="project-card h-100">
-            <!-- Image Section -->
-            <div class="card-image-section">
-                <img src="/img/church.png"
-                     class="img-fluid project-img w-100"
-                     style="object-fit:cover"
-                     alt="Church Management">
-            </div>
-            
-            <!-- Body Section -->
-            <div class="card-body-section">
-                <!-- Title Section -->
-                <div class="title-section">
-                    <h5 class="mb-3">Church Management</h5>
-                </div>
-                
-                <!-- Description Section -->
-                <div class="description-section">
-                    <p class="text-muted">
-                        Church management platform (ChMS) is specialized software for churches: all-in-one hub for membership tracking, volunteer scheduling, online giving, communications, events, and reporting. Helps pastors focus on ministry, not admin.
-                    </p>
-                </div>
-                
-                <!-- Features Section -->
-                <div class="features-section">
-                    <ul class="list-unstyled text-primary">
-                        <li><i class="bi bi-check-circle me-2"></i>Membership & Attendance Tracking</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Online Giving & Financial Tools</li>
-                        <li><i class="bi bi-check-circle me-2"></i>Volunteer Scheduling & Events</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Button Section -->
-            <div class="card-footer-section">
-                <a class="btn btn-outline-secondary w-100 disabled" aria-disabled="true">
-                    View Project <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Project Card 12 - Empty Card (Hidden) -->
-    
-</div>
-    </div>
-</div>
-<!-- Projects End -->
+    <script src="assets/js/main.js" defer></script>
+</body>
 
-        <!-- Projects End -->
-
-        <!-- Footer Start -->
-        <div id="footer-placeholder"></div>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
-
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-
-        <script>
-          function loadHTML(id, url) {
-            fetch(url)
-              .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-              })
-              .then(data => {
-                document.getElementById(id).innerHTML = data;
-              })
-              .catch(error => console.error('Error loading ' + url + ':', error));
-          }
-
-          // Load navbar and footer into placeholders
-          loadHTML('navbar-placeholder', 'navbar.html');
-          loadHTML('footer-placeholder', 'footer.html');
-        </script>
-    </body>
 </html>

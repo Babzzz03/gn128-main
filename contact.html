@@ -1,206 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>GN128 - IT Solutions</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+    <title>Contact Us — GN128 Solutions</title>
+    <meta name="description"
+        content="Tell us what you want to automate. Complete the form and GN128 Solutions will contact you about the right AI system for your business.">
 
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-                <style>
-            .container{
-                max-width: 100%;
-            }
-            @media (min-width: 1200px) {
-                .container-xl, .container-lg, .container-md, .container-sm, .container {
-                    max-width: 100%;
-                }
-            }
-            h5, .h5 {
-    font-size: 1rem;
-}
-        </style>
-    </head>
+    <!-- ============================= HEADER ============================= -->
+    <header class="site-header" id="site-header">
+        <div class="container header__inner">
+            <a href="index.html" class="brand" aria-label="GN128 Solutions home">
+                <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
+            </a>
 
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
+            <nav class="nav" id="primary-nav" aria-label="Primary">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="projects.html" class="nav__link">Projects</a></li>
+                    <li><a href="contact.html" class="nav__link is-active" aria-current="page">Contact Us</a></li>
+                </ul>
+            </nav>
 
- <!-- Navbar Start -->
-        <div class="c">
-            <div class="container">
-                <div id="navbar-placeholder"></div>
+            <div class="header__actions">
+                <a href="book.html" class="btn btn--pill btn--dark">Book a Call</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
+                    aria-controls="primary-nav">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-        <!-- Navbar End -->
+    </header>
 
+    <main id="main">
+        <!-- ============================= CONTACT HERO ============================= -->
+        <section class="svc-hero" id="top">
+            <video class="svc-hero__bg" autoplay muted loop playsinline
+                poster="assets/img/contact-hero-poster.jpg" aria-hidden="true">
+                <source src="assets/video/contact-hero.mp4" type="video/mp4">
+            </video>
+            <div class="svc-hero__overlay" aria-hidden="true"></div>
 
-        <!-- Contact Start -->
-        <div class="container-fluid ">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Get In Touch</h5>
-                    <h1 class="mb-3">Contact for any query</h1>
+            <div class="svc-hero__inner container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html" aria-label="Home">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7M6 10v9h12v-9" /></svg>
+                    </a>
+                    <span aria-hidden="true">›</span>
+                    <span aria-current="page">Contact Us</span>
+                </nav>
+
+                <p class="svc-hero__meta" id="hero-datetime">&nbsp;</p>
+
+                <h1 class="svc-hero__title reveal" data-reveal>Tell us what you want to automate.</h1>
+
+                <div class="svc-hero__foot">
+                    <div class="svc-hero__intro reveal" data-reveal>
+                        <p class="pill svc-hero__badge">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            Complete the form below and GN128 Solutions will contact you about the right AI system for your business.
+                        </p>
+                    </div>
+
+                    <aside class="svc-hero__links reveal" data-reveal>
+                        <h2 class="quicklinks__title">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            Quicklinks
+                        </h2>
+                        <ul class="quicklinks">
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="#contact-form" class="is-active" aria-current="page">Contact Us</a></li>
+                        </ul>
+                    </aside>
                 </div>
-                <div class="contact-detail position-relative p-4 p-md-5">
-                    <div class="row g-4 mb-5 justify-content-center">
-    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-delay=".3s">
-        <div class="d-flex bg-light p-3 rounded h-100">
-            <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width:64px;height:64px;">
-                <i class="fas fa-map-marker-alt text-white"></i>
-            </div>
-            <div class="ms-3">
-                <h4 class="text-primary">Address</h4>
-                <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">PMB 17628 Ikeja, <br> Ikeja, Lagos </a>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-delay=".5s">
-        <div class="d-flex bg-light p-3 rounded h-100">
-            <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width:64px;height:64px;">
-                <i class="fa fa-phone text-white"></i>
+                <a class="scroll-down" href="#contact-form">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+                    Scroll Down
+                </a>
             </div>
-            <div class="ms-3">
-                <h4 class="text-primary">Call Us</h4>
-                <a class="h5" href="tel:+2349116277200">+234 911 627 7200 </a>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-delay=".7s">
-        <div class="d-flex bg-light p-3 rounded h-100">
-            <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width:64px;height:64px;">
-                <i class="fa fa-envelope text-white"></i>
-            </div>
-            <div class="ms-3">
-                <h4 class="text-primary">Address</h4>
-                <a class="h5" href="mailto:info@gn128.com">Unit 23 Freetrade House, <br>2 Lowther Road, HA7 1EP</a>
-            </div>
-        </div>
-    </div>
+        <!-- ============================= CONTACT FORM + INFO ============================= -->
+        <section class="section" id="contact-form">
+            <div class="container contact-grid">
+                <!-- Form -->
+                <form class="contact-form reveal" data-reveal id="contact-form-el" novalidate>
+                    <p class="form-status" role="status" aria-live="polite"></p>
 
-    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-delay=".9s">
-        <div class="d-flex bg-light p-3 rounded h-100">
-            <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width:64px;height:64px;">
-                <i class="fa fa-envelope text-white"></i>
-            </div>
-            <div class="ms-3">
-                <h4 class="text-primary">Call</h4>
-                <a class="h5" href="mailto:support@gn128.com">+44 203 576 2751 </a>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="field">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="name" placeholder="Your name" required>
+                    </div>
 
-                    <div class="row g-5">
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                            <div class="p-4 p-md-5 h-100 rounded contact-map">
-                                <iframe 
-                                    class="rounded w-100 h-100"
-                                    src="https://www.google.com/maps?q=31%20Unity%20Street,%20Off%20Toyin%20Street,%20Ikeja,%20Lagos,%20Nigeria&output=embed"
-                                    style="border:0; min-height:300px;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(225) 555-0118">
+                    </div>
 
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                            <div class="p-4 p-md-5 rounded contact-form">
-                                <!--<h4 class="mb-4">Receive messages instantly with our PHP and Ajax contact form - available in the <a href="https://htmlcodex.com/downloading/?item=2737">Pro Version</a> only.</h4>-->
-                                <form action="send_email.php" method="POST">
-                                    <div class="mb-4">
-                                        <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <input type="text" class="form-control border-0 py-3" placeholder="Project" name="project" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message" name="message" required></textarea>
-                                    </div>
-                                    <div class="mb-4">
-                                        <div class="g-recaptcha" data-sitekey="6LfuWD4sAAAAAPB4gr6uGf5JsOG-EOcizJ7LZSZP"></div>
-                                    </div>
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
 
-                                    <div class="text-start">
-                                        <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message</button>
-                                    </div>
-                                </form>
+                    <div class="field">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Enter Company Name">
+                    </div>
 
-                            </div>
-                        </div>
+                    <div class="field">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service">
+                            <option value="" disabled selected>Select a Service</option>
+                            <option>AI Automation</option>
+                            <option>AI Agents</option>
+                            <option>Workflow Systems</option>
+                            <option>Consulting &amp; Advisory</option>
+                            <option>Software Development</option>
+                            <option>Cloud &amp; Infrastructure</option>
+                            <option>Something else</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Leave Us A Message</label>
+                        <textarea id="message" name="message" placeholder="Write Your Message here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--lg">Submit Your Message</button>
+                </form>
+
+                <!-- Info -->
+                <div class="contact-info">
+                    <div class="info-block reveal" data-reveal id="new-business">
+                        <h2 class="info-block__title">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            New Business
+                        </h2>
+                        <p class="info-block__text">
+                            Explore how AI can unlock growth and streamline your operations from day one.
+                        </p>
+                        <a class="info-block__link" href="mailto:hello@gn128solutions.com">hello@gn128solutions.com</a>
+                    </div>
+
+                    <div class="info-block reveal" data-reveal>
+                        <h2 class="info-block__title">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            Support
+                        </h2>
+                        <p class="info-block__text">
+                            Need help with an existing project? Please lodge a ticket using the link below.
+                        </p>
+                        <a class="info-block__link" href="mailto:support@gn128solutions.com">support@gn128solutions.com</a>
+                    </div>
+
+                    <div class="info-block reveal" data-reveal>
+                        <h2 class="info-block__title">
+                            <svg class="pill__glyph" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                            FAQs
+                        </h2>
+                        <p class="info-block__text">
+                            Browse our most common questions to learn how we work and what to expect.
+                        </p>
+                        <a class="info-block__link" href="faq.html">
+                            Browse FAQs
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
                     </div>
                 </div>
-            </div> 
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="site-footer" id="contact">
+        <div class="container footer__grid">
+            <div class="footer__brand">
+                <a href="index.html" class="brand">
+                    <img src="assets/img/logo.png" alt="GN128 Solutions" class="brand__logo">
+                </a>
+                <p class="footer__tagline">
+                    Empowering the enterprise with intelligent automation solutions that scale.
+                </p>
+                <p class="footer__note">A product of GN128 Solutions.</p>
+            </div>
+
+            <nav class="footer__col" aria-label="Quick links">
+                <h4 class="footer__heading">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Company">
+                <h4 class="footer__heading">Company</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="contact.html">Email Us</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Resources">
+                <h4 class="footer__heading">Resources</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="blog.html">Webinars</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Legal">
+                <h4 class="footer__heading">Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">GDPR</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Contact End -->
 
+        <div class="container footer__bar">
+            <p>&copy; <span id="year">2026</span> GN128 Solutions. All rights reserved.</p>
+            <ul class="socials" aria-label="Social media">
+                <li><a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18 4l-5.5 6.5L18 20h-4l-3.5-5-4.3 5H4l6-7L4.3 4H8.5l3.2 4.6L15.8 4z" fill="currentColor" stroke="none"/></svg></a></li>
+                <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h3v11H4zM5.5 4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM10 9h3v1.6c.5-.9 1.6-1.8 3.3-1.8 3 0 3.7 1.9 3.7 4.5V20h-3v-5.2c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.8 1.4V20h-3z" fill="currentColor" stroke="none"/></svg></a></li>
+                <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+            </ul>
+        </div>
+    </footer>
 
-         <!-- Footer Start -->
-         <div id="footer-placeholder"></div>
-        <!-- Footer End -->
+    <script src="assets/js/menu.js" defer></script>
 
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-        
-        <script>
-          function loadHTML(id, url) {
-            fetch(url)
-              .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-              })
-              .then(data => {
-                document.getElementById(id).innerHTML = data;
-              })
-              .catch(error => console.error('Error loading ' + url + ':', error));
-          }
-        
-          // Load navbar and footer into placeholders
-          loadHTML('navbar-placeholder', 'navbar.html');
-          loadHTML('footer-placeholder', 'footer.html');
-        </script>
-
-    </body>
+    <script src="assets/js/main.js" defer></script>
+</body>
 
 </html>
