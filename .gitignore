@@ -1,0 +1,5 @@
+
+# Secrets
+.credentials.local
+*.local
+.DS_Store
